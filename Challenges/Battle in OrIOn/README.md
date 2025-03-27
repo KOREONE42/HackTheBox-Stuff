@@ -1,4 +1,4 @@
-# Solution to solve the challenge Battle in OrIOn
+# Solution to solve the retired challenge "Battle in OrIOn"
 
 https://app.hackthebox.com/challenges/Battle%20in%20OrIOn
 
