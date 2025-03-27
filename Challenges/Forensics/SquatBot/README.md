@@ -1,4 +1,4 @@
-# Solution to solve the retired challenge "SquatBot"
+# Solution of retired challenge "SquatBot"
 
 https://app.hackthebox.com/challenges/SquatBot
 
