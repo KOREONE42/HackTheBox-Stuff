@@ -2,7 +2,7 @@
 
 https://app.hackthebox.com/challenges/Battle%20in%20OrIOn
 
-Remember to adjust your Laser Canons and Thrusters!
+Remember to adjust your Laser Canons, Thrusters and model path aswell! (line 87 + 90)
 
 CHALLENGE DESCRIPTION
 
