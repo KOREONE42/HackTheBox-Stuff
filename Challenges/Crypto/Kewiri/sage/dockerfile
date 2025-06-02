@@ -1,0 +1,16 @@
+# dockerfile
+FROM sagemath/sagemath:latest
+
+WORKDIR /sage
+
+COPY server.sage /sage/server.sage
+# make sure that enrypoint.sh has execution permissions
+COPY entrypoint.sh /sage/entrypoint.sh
+
+USER root
+
+RUN apt-get update && apt-get install -y netcat
+
+EXPOSE 1337
+
+CMD ["/sage/entrypoint.sh"]
