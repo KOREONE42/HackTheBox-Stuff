@@ -1,5 +1,23 @@
 // patched routes/routes.js
 
+/*
+  flaw at the heart of this challenge is an unauthenticated, user‑controlled path traversal in the file‐upload endpoint
+
+  Unsanitized Filename:
+  The server uses the client‑supplied file.originalFilename directly when constructing the target path:
+
+    const targetFilename = file.originalFilename;
+    const targetPath     = path.join(__dirname, '../resources', targetFilename);
+
+  If originalFilename contains ../ segments (e.g. ../static/js/evil.js), path.join() happily resolves it outside of resources/.
+
+  Directory Escape → Arbitrary File Write:
+
+  By choosing a filename like ../static/js/malicious.js, an attacker causes the server to move the uploaded temp‐file into …/resources/../static/js/malicious.js, which normalizes to the application’s static/js folder.
+
+  Because Express is serving static/ directly, the attacker can then retrieve or execute that file over HTTP (e.g. GET /challenge/js/malicious.js).
+*/
+
 const express = require('express');
 const router = express.Router();
 const { formidable } = require('formidable');

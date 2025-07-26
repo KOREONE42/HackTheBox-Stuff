@@ -1,5 +1,14 @@
 // patched routes/messages.js
 
+/*
+Vulnerability
+Endpoint: GET /api/messages/{id}
+
+Problem: No authorization check to ensure that message.id == current_user.id (or message.owner_id), so any valid session can fetch any message by its numeric ID.
+
+Consequence: An attacker can iterate through IDs (e.g. 1, 2, 3, …) and exfiltrate all messages, including the “flag” at ID 3.
+*/
+
 import express from 'express';
 import { requireAuth } from '../utils/middleware.js';
 
