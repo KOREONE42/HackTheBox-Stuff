@@ -1,3 +1,3 @@
 # HackTheBox-Stuff
 
-little repo for htb stuff :)
+little repo for htb stuff 😎
