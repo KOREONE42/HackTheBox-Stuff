@@ -1,0 +1,58 @@
+00: 10 02 0a    movl cx, 10
+01: 03 00 00    clr
+02: 10 01 01    movl bx,  1
+03: 10 03 00    movl dx,  0
+04: 17 00 03    mmiv 0x0,  dx
+05: 10 01 2e    movl bx,  :sub4
+06: 11 01 00    call bx,  0
+07: 18 00 00    mmov ax, 0x0
+08: 10 01 37    movl bx,  :sub5
+09: 11 01 00    call bx,  0
+10: 10 01 01    movl bx,  1
+11: 10 03 00    movl dx,  0
+12: 14 03 00    push dx,  0
+13: 10 01 37    movl bx,  :sub5
+14: 11 01 00    call bx,  0
+15: 10 01 01    movl bx,  1
+16: 01 01 00    sub  bx,  0
+17: 13 00 00    cmp  ax, ax
+18: 10 01 0a    movl bx, :sub1
+19: 0e 00 00    jnz
+20: 10 01 2e    movl bx,  :sub4
+21: 11 01 00    call bx,  0
+22: 10 01 00    movl bx,  0
+23: 17 01 01    mmiv 0x1, bx
+24: 17 02 01    mmiv 0x2, bx
+25: 15 00 00    pop  ax,  0
+26: 10 01 01    movl bx,  1
+27: 10 03 00    movl dx,  0
+28: 10 01 37    movl bx,  :sub5
+29: 11 01 00    call bx,  0
+30: 18 01 01    mmov bx, 0x1
+31: 1a 00 00    msk
+32: 17 01 01    mmiv 0x1, bx
+33: 18 01 02    mmov bx, 0x2
+34: 1b 00 00    mskb
+35: 17 02 01    mmiv 0x2, bx
+36: 10 00 ff    movl ax,  0xff
+37: 13 01 00    cmp  bx, ax
+38: 10 01 19    movl bx, :sub3
+39: 0a 00 00    jl
+40: 10 01 00    movl bx,  0
+41: 18 03 01    mmov dx, 0x1
+42: 10 02 01    movl cx,  1
+43: 10 02 00    movl cx,  0
+44: 10 01 16    movl bx,  :sub2
+45: 05 01 00    jmp  bx,  0
+46: 10 00 05    movl ax,  0x05
+47: 10 01 37    movl bx,  :sub5
+48: 11 01 00    call bx,  0
+49: 10 01 01    movl bx,  1
+50: 01 01 00    sub  bx,  0
+51: 13 00 00    cmp  ax,  ax
+52: 10 01 2f    movl bx,  :sub4+1
+53: 0e 00 00    jnz
+54: 12 00 00    ret
+55: 10 02 04    movl cx,  4
+56: 10 02 00    movl cx,  0
+57: 12 00 00    ret
